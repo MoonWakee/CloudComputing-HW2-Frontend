@@ -1,0 +1,96 @@
+
+#search-bar{
+    width: 700px;
+    height: 50px;
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    background: white;
+    outline: none;
+}
+
+.searcher{
+    margin-top: 100px;
+    margin-left: 80px;
+}
+
+#attatch{
+    margin-top: 100px;
+    margin-left: 20px;
+    overflow:hidden;
+}
+
+#myfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+#clip{
+    border-style:solid;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#logo-text{
+    font-size: 20px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+#submit{
+    width: 50px;
+    height: 50px;
+    background: #2196F3;
+    color: white;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    outline: none;
+}
+
+#files{
+    outline: none;
+}
+
+#label-row{
+    margin-top: 10px;
+}
+
+#custom{
+    font-size: 18px;
+    margin-right: 10px;
+    margin-left: 15px;
+}
+
+#custom-input{
+    width: 350px;
+}
+
+#mic{
+    width: 50px;
+    height: 50px;
+    background: white;
+    color: black;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    outline: none;
+
+}
+
+#pictures{
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.pics{
+    width: 300px;
+    height: 200px;
+}

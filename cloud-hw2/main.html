@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <link rel="shortcut icon" href="#">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./assets/js/sdk/lib/axios/dist/axios.standalone.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/rollups/sha256.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/components/hmac.js"></script>
+    <script src="./assets/js/sdk/lib/CryptoJS/components/enc-base64.js"></script>
+    <script src="./assets/js/sdk/lib/url-template/url-template.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script src="./assets/js/sdk/lib/apiGatewayCore/utils.js"></script>
+    <script src="./assets/js/sdk/apigClient.js"></script>
+    <script src="./assets/js/aws-sdk.min.js"></script>
+
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+<link
+  rel="stylesheet"
+  href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+/>
+    <link rel="stylesheet" type="text/css" href="./assets/main.css" />
+    <script src="./assets/js/main.js"></script>
+    <link rel="stylesheet"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+
+    <title>Cloud Computing Assignment 2</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+        <div class="searcher">
+            <input id="search-bar" type="text" placeholder="Search for photos">
+            <button id="mic" type="submit" onclick="startRecognition()"><span class="material-icons-outlined">mic</span></button>            <button id="submit" type="submit"><span class="material-icons-outlined">search</span></button>
+        </div>
+            <div id="attatch" class="row">
+                <h2 id="logo-text">Upload</h2>    
+                <span id="clip" class="material-icons-outlined">attach_file</span>
+                </div>
+                <div id="dialog" title="Upload Photos">
+                    <input type="file" id="files" name="files" accept="image/png, image/jpeg, image/jpg">
+                    <div id="label-row" class="row">
+                        <text id="custom">Custom Labels</text>
+                        <input id="custom-input" type="text" placeholder="Seperate labels with comma ex) Sam, Sally">
+                    </div>
+                </div>
+                <script>
+                    $( "#dialog" ).dialog({ 
+                        autoOpen: false,
+                        width: 600,
+                        buttons: {
+                            "Upload": function(){
+                                $(this).dialog("close")
+                                // Write Function to PUT in S3 
+                                upload();
+                            },
+                            "Cancel": function(){
+                                $(this).dialog("close")
+                            }
+                        }
+                    
+                    });
+                    $( "#clip" ).click(function() {
+                      $( "#dialog" ).dialog( "open" );
+                    });
+                    </script>
+    </div> 
+    </div>
+    <div id="pictures" class="container">
+    </div>
+
+
+</body>
+</html> 
